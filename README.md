@@ -2,17 +2,17 @@
 <p align="center">
   <a href="https://ifcjs.github.io/info/">ifc.js</a>
   |
-  <a href="https://ifcjs.github.io/info/docs/Guide/web-ifc/Introduction">documentation</a>
+  <a href="https://ifcjs.github.io/info/docs/Guide/web-ifc/Introduction">문서</a>
   |
-  <a href="https://ifcjs.github.io/web-ifc/examples/viewer/index.html">demo</a>
+  <a href="https://ifcjs.github.io/web-ifc/examples/viewer/index.html">데모</a>
   |
-  <a href="https://discord.gg/FXfyR4XrKT">discord</a>
+  <a href="https://discord.gg/FXfyR4XrKT">디스코드</a>
   |
-  <a href="https://github.com/ifcjs/web-ifc/tree/main/examples/usage/src">usage examples</a>
+  <a href="https://github.com/ifcjs/web-ifc/tree/main/examples/usage/src">사용법 예제</a>
   |
-  <a href="https://www.npmjs.com/package/web-ifc">npm package</a>
+  <a href="https://www.npmjs.com/package/web-ifc">npm 패키지</a>
   |
-  <a href="https://github.com/ifcjs/web-ifc/blob/main/contributing.md">contributing</a>
+  <a href="https://github.com/ifcjs/web-ifc/blob/main/contributing.md">기여(공헌)하기</a>
 </p>
 
 <img src="banner.png">
@@ -22,51 +22,51 @@
 ![npm](https://img.shields.io/npm/dw/web-ifc)
 ![opencollective](https://opencollective.com/ifcjs/tiers/badge.svg)
 
-**web-ifc** is a javascript library to read and write ifc files, at native speeds. **web-ifc** is part of the [ifc.js](https://ifcjs.github.io/info/) project, which aims to lower the threshold for developing open BIM applications.
+**web-ifc**는 네이티브 속도로 ifc 파일을 읽고 쓰기 위한 JavaScript 라이브러리입니다. **web-ifc**는 [ifc.js](https://ifcjs.github.io/info/) 프로젝트의 일부로서 개방형 BIM 응용을 개발하기 위한 임계치를 낮추는 것을 목표로 합니다.
 
-## Status
+## 상태
 
-Although it is quite stable and fast already, web-ifc is in **pre-alpha status** until ifc support matures. The list of currently supported ifc elements, or level of support for different ifc types, is an undocumented work in progress. 
+web-ifc가 이미 상당히 안정적이고 빠르다 할지라도 충분한 ifc 지원까지는 **pre-alpha 상태**입니다. 현재 지원되는 ifc 요소 리스트나 서로 다른 ifc 타입들에 대한 지원 수준은 진행 중이며 문서화되지 않은 작업입니다.
 
-Depending on your models, web-ifc may be quick and correct, or slow and broken, please share any problematic models so I can take a look :)
+당신의 모델에 따라 web-ifc는 빠르고 정확할 수도 있고 느리고 고장날 수도 있습니다. 문제가 있는 모델은 제가 볼 수 있도록 공유 부탁 드립니다 :)
 
-## Install
+## 설치
 
 `npm install web-ifc`
 
-## Quick setup
+## 빠른 설정
 
 ```JavaScript
 const WebIFC = require("web-ifc/web-ifc-api.js");
 
-// initialize the API
+// API 초기화
 const ifcApi = new WebIFC.IfcAPI();
 
-// initialize the library
+// 라이브러리 초기화
 await ifcApi.Init();
 
-// open a model from data
-let modelID = ifcApi.OpenModel(/* IFC data as a string or UInt8Array */, /* optional settings object */, );
+// 데이터로부터 모델 열기
+let modelID = ifcApi.OpenModel(/* string 또는 UInt8Array 형태의 IFC 데이터 */, /* 선택적인 설정 오브젝트 */, );
 
-// the model is now loaded! use modelID to fetch geometry or properties
-// checkout examples/usage for some details on how to read/write IFC
+// 이제 모델이 로드되었습니다! 지오메트리 또는 프로퍼티를 가져오기 위해 modelID를 사용하십시오.
+// IFC를 읽고 쓰는 방법을 더 자세히 알기 위해서는 예제/사용법을 확인하십시오.
 
-// close the model, all memory is freed
+// 모델을 닫습니다. 모든 메모리가 해제됩니다.
 ifcApi.CloseModel(modelID);
 
 ```
 
-See [examples](https://github.com/tomvandig/web-ifc/tree/main/examples/usage/src) for more details on how to use web-ifc.
+web-ifc를 사용하는 방법을 더 자세히 알려면 [예제](https://github.com/tomvandig/web-ifc/tree/main/examples/usage/src)를 보십시오.
 
-## Building WASM module
+## WASM 모듈 빌드하기
 
-### Setting up emscripten
+### emscripten 설정하기
 
-The WASM library is built through emscripten, please see [the emscripten installation guide](https://emscripten.org/docs/getting_started/downloads.html) for information on how to set up emscripten. Afterwards `emsdk_env` needs to be in your path.
+WASM 라이브러리는 emscripten을 통해 빌드됩니다. emscripten 설정에 대한 정보는 [emscripten 설치 가이드](https://emscripten.org/docs/getting_started/downloads.html)를 보십시오. 그 후에는 당신의 경로 안에 `emsdk_env`가 있어야합니다.
 
-### WASM library
+### WASM 라이브러리
 
-Run `npm install` to install all dependencies.
+모든 디펜던시를 설치하려면 `npm install`을 실행하십시오.
 
 Run `npm run setup-env` whenever you open a new terminal, this will set up the required emscripten environment variables for you to compile code.
 
@@ -76,12 +76,12 @@ If you wish to build the WASM with debugging enabled you can run `npm run build-
 
 Run `npm run dev` to launch a development server with a basic ifc file viewer.
 
-## Stand alone C++
+## 독립형 C++
 
 Although the primary focus of the library is to be used through WebAssembly in the browser/nodejs, the project can be used stand-alone as a c++ library or executable. See [here](https://github.com/tomvandig/web-ifc/blob/main/src/wasm/web-ifc-test.cpp) for a simple entry point to get started.
 
-## Contributing
+## 기여(공헌)하기
 
-Want to help out? Great!
+도와주고 싶습니까? 훌륭해요!
 
-Please checkout [our contribution suggestsions](https://github.com/tomvandig/web-ifc/blob/main/contributing.md).
+[저희의 기여 의견](https://github.com/tomvandig/web-ifc/blob/main/contributing.md)을 확인해 주십시오.
