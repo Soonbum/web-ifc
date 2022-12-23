@@ -66,19 +66,19 @@ WASM 라이브러리는 emscripten을 통해 빌드됩니다. emscripten 설정�
 
 ### WASM 라이브러리
 
-모든 디펜던시를 설치하려면 `npm install`을 실행하십시오.
+모든 디펜던시(dependencies)를 설치하려면 `npm install`을 실행하십시오.
 
-Run `npm run setup-env` whenever you open a new terminal, this will set up the required emscripten environment variables for you to compile code.
+새로운 터미널을 열 때마다 `npm run setup-env`를 실행하십시오. 이렇게 하면 코드를 컴파일하기 위한 필수 emscripten 환경 변수들을 설정하게 됩니다.
 
-Run `npm run build-release-all` to build a release version of the wasm binary and the accompanying web-ifc api. It will be placed in `./dist`.
+wasm 바이너리와 web-ifc API의 릴리즈 버전을 빌드하기 위해 `npm run build-release-all`을 실행하십시오. 결과물은 `./dist`에 배치될 것입니다.
 
-If you wish to build the WASM with debugging enabled you can run `npm run build-debug`. This will enable you to inspect debugging information better when running web-ifc.
+만약 WASM을 디버깅 활성화 상태로 빌드하고 싶으면 `npm run build-debug`를 실행하면 됩니다. 이렇게 하면 web-ifc를 실행할 때 디버깅 정보를 더 잘 검사할 수 있게 됩니다.
 
-Run `npm run dev` to launch a development server with a basic ifc file viewer.
+기본 ifc 파일 뷰어와 함께 개발 서버를 실행하려면 `npm run dev`를 실행하십시오.
 
 ## 독립형 C++
 
-Although the primary focus of the library is to be used through WebAssembly in the browser/nodejs, the project can be used stand-alone as a c++ library or executable. See [here](https://github.com/tomvandig/web-ifc/blob/main/src/wasm/web-ifc-test.cpp) for a simple entry point to get started.
+이 라이브러리는 기본적으로 browser/nodejs에서 WebAssembly를 통해 사용되기는 하지만, 이 프로젝트는 C++ 라이브러리 또는 실행파일로서 독립적으로 사용할 수도 있습니다. 시작하기 위한 간단한 엔트리 포인트에 대해서는 [여기](https://github.com/tomvandig/web-ifc/blob/main/src/wasm/web-ifc-test.cpp)를 보십시오.
 
 ## 기여(공헌)하기
 
